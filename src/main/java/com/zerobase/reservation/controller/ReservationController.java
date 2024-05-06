@@ -1,6 +1,6 @@
 package com.zerobase.reservation.controller;
 
-import com.zerobase.reservation.dto.reservation.DeleteDto;
+import com.zerobase.reservation.dto.reservation.DeleteReservationDto;
 import com.zerobase.reservation.dto.reservation.ReservationsDto;
 import com.zerobase.reservation.dto.reservation.ReserveDto;
 import com.zerobase.reservation.dto.reservation.VisitDto;
@@ -35,8 +35,8 @@ public class ReservationController {
      * 예약 취소
      */
     @DeleteMapping("/{reservationKey}")
-    public ResponseEntity<DeleteDto> delete(@PathVariable String reservationKey) {
-        return ResponseEntity.ok(new DeleteDto(reservationService.delete(reservationKey)));
+    public ResponseEntity<DeleteReservationDto> delete(@PathVariable String reservationKey) {
+        return ResponseEntity.ok(new DeleteReservationDto(reservationService.delete(reservationKey)));
     }
 
     /**

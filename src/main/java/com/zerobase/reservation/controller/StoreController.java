@@ -71,7 +71,7 @@ public class StoreController {
      */
     @PreAuthorize("hasRole('MANAGER')")
     @DeleteMapping("/{storeKey}")
-    public ResponseEntity<DeleteDto> delete(@PathVariable String storeKey) {
-        return ResponseEntity.ok(new DeleteDto(storeService.delete(storeKey)));
+    public ResponseEntity<DeleteStoreDto> delete(@PathVariable String storeKey) {
+        return ResponseEntity.ok(new DeleteStoreDto(storeService.delete(storeKey)));
     }
 }

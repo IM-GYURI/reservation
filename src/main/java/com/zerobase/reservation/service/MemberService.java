@@ -76,10 +76,10 @@ public class MemberService {
     }
 
     /**
-     * 전화번호를 통해 회원이 존재하는지 확인
+     * 이메일을 통해 회원이 존재하는지 확인
      */
-    public MemberEntity findByPhoneOrThrow(String phoneNumber) {
-        return memberRepository.findByPhone(phoneNumber)
+    public MemberEntity findByEmailOrThrow(String email) {
+        return memberRepository.findByEmail(email)
                 .orElseThrow(() -> new CustomException(MEMBER_NOT_FOUND));
     }
 }
