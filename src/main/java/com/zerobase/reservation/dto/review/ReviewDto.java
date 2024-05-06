@@ -20,6 +20,9 @@ public class ReviewDto {
     private MemberEntity memberEntity;
     private StoreEntity storeEntity;
 
+    /**
+     * ReviewEntity -> ReviewDto 변환
+     */
     public static ReviewDto fromEntity(ReviewEntity reviewEntity) {
         return ReviewDto.builder()
                 .reviewId(reviewEntity.getId())

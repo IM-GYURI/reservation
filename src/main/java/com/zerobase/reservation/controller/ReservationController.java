@@ -22,6 +22,7 @@ public class ReservationController {
 
     /**
      * 매장 예약
+     * CUSTOMER 권한을 가지고 있을 경우만 사용 가능
      */
     @PreAuthorize("hasRole('CUSTOMER')")
     @PostMapping
@@ -51,6 +52,7 @@ public class ReservationController {
 
     /**
      * 방문 확인
+     * CUSTOMER 권한을 가지고 있을 경우만 사용 가능
      */
     @PreAuthorize("hasRole('CUSTOMER')")
     @PatchMapping("/visit")

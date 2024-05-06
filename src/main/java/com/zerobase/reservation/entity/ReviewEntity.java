@@ -7,6 +7,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 
+/**
+ * Review 엔티티
+ * : 리뷰 아이디, 제목, 내용, 점수, 회원 아이디, 매장 아이디
+ * 유니크 조건 : 매장 아이디, 예약 날짜, 예약 시간
+ */
 @Getter
 @NoArgsConstructor
 @Entity(name = "Review")
@@ -39,11 +44,19 @@ public class ReviewEntity {
         this.score = score;
     }
 
+    /**
+     * member와 store 설정
+     * @param memberEntity
+     * @param storeEntity
+     */
     public void addMemberAndStore(MemberEntity memberEntity, StoreEntity storeEntity) {
         this.memberEntity = memberEntity;
         this.storeEntity = storeEntity;
     }
 
+    /**
+     * 리뷰 수정
+     */
     public void updateReview(UpdateDto.Request request) {
         this.title = request.getTitle();
         this.content = request.getContent();

@@ -9,7 +9,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+/**
+ * 리뷰 작성 시 필요한 Dto
+ */
 public class WriteDto {
+    /**
+     * 요청 시 : 예약 키, 제목, 내용, 점수
+     */
     @Getter
     @Builder
     @NoArgsConstructor
@@ -41,6 +47,9 @@ public class WriteDto {
         }
     }
 
+    /**
+     * 응답 시 : 리뷰 아이디
+     * */
     public record Response(Long reviewId) {
         public static Response from(ReviewDto reviewDto) {
             return new Response(reviewDto.getReviewId());

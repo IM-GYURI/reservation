@@ -7,7 +7,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+/**
+ * 리뷰 수정 시 필요한 Dto
+ */
 public class UpdateDto {
+    /**
+     * 요청 시 : 리뷰 아이디, 제목, 내용, 점수
+     */
     @Getter
     @Builder
     @NoArgsConstructor
@@ -26,6 +32,9 @@ public class UpdateDto {
         private Double score;
     }
 
+    /**
+     * 응답 시 : 리뷰 아이디
+     */
     public record Response(Long reviewId) {
         public static Response from(ReviewDto reviewDto) {
             return new Response(reviewDto.getReviewId());
