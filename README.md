@@ -36,10 +36,10 @@
 ![Swagger_1](https://github.com/IM-GYURI/Weather-Diary/assets/80020777/7d008739-6360-482b-b93f-b5d77fe13abe)
 
 ### member-controller
-![img.png](img.png)
+![img](https://github.com/IM-GYURI/reservation/assets/80020777/6cb9e49c-f215-4e11-82fe-5b75898a90f0)
 
 #### POST : /member/signup
-![img_1.png](img_1.png)
+![img_1](https://github.com/IM-GYURI/reservation/assets/80020777/583ba0f8-9cad-45ee-b42d-4c04b1c9a5dc)
 - 회원 가입 api
 - Request
   - Body : name, email, password, phone, role
@@ -47,7 +47,7 @@
   - memberKey, name, email, role
 
 #### POST : /member/signin
-![img_2.png](img_2.png)
+![img_2](https://github.com/IM-GYURI/reservation/assets/80020777/257f6ad0-191b-405a-ab2b-ce5fc15ecfc8)
 - 로그인 api
 - Request
   - Body : email, password
@@ -112,10 +112,10 @@
   - List of storeName
 
 ### reservation-controller
-![img_3.png](img_3.png)
+![img_3](https://github.com/IM-GYURI/reservation/assets/80020777/741a2097-8787-49bf-b10b-56783849b59d)
 
 #### POST : /reserve
-![img_4.png](img_4.png)
+![img_4](https://github.com/IM-GYURI/reservation/assets/80020777/a7bba78b-e963-47ad-8f02-ac106e981c6d)
 - 예약 진행 api
 - Request
   - Header : Authorization (CUSTOMER)
@@ -124,7 +124,7 @@
   - storeKey, storeName 
 
 #### PATCH : /reserve/visit
-![img_5.png](img_5.png)
+![img_5](https://github.com/IM-GYURI/reservation/assets/80020777/61ca9e87-8691-42ee-b9b5-ea944de14e12)
 - 방문 확인 api
 - Request
   - Header : Authorization (CUSTOMER)
@@ -133,7 +133,7 @@
   - reservationKey
 
 #### GET : /reserve/{id}/{date}
-![img_6.png](img_6.png)
+![img_6](https://github.com/IM-GYURI/reservation/assets/80020777/4f6746d9-0260-4236-851b-851db97a507a)
 - 날짜별 예약 정보
 - Request
   - Header : Authorization (MANAGER/CUSTOMER)
@@ -142,7 +142,7 @@
   - Body : List of storeName, reservationKey, reservationDate, reservationTime, headcount, memberName, memberPhone
 
 #### DELETE : /reserve/{reservationKey}
-![img_7.png](img_7.png)
+![img_7](https://github.com/IM-GYURI/reservation/assets/80020777/dc87d5a2-4a46-4c77-8d2c-072f39c9d731)
 - 예약 취소 api
 - Request
   - Header : Authorization (MANAGER/CUSTOMER)
@@ -151,10 +151,10 @@
   - reservationKey
 
 ### review-controller
-![img_8.png](img_8.png)
+![img_8](https://github.com/IM-GYURI/reservation/assets/80020777/e4b2d6be-de9d-4d65-a174-f2efa4bfcc22)
 
 #### POST : /review
-![img_9.png](img_9.png)
+![img_9](https://github.com/IM-GYURI/reservation/assets/80020777/18f303cd-7fd5-4694-b5ba-922d58cfc66c)
 - 리뷰 작성 api
 - Request
   - Header : Authorization (CUSTOMER)
@@ -163,7 +163,7 @@
   - reviewId
 
 #### PATCH : /review
-![img_10.png](img_10.png)
+![img_10](https://github.com/IM-GYURI/reservation/assets/80020777/a375f010-83f6-4dcf-bc2c-32f6daf9090d)
 - 리뷰 수정 api
 - Request
   - Header : Authorization (CUSTOMER)
@@ -172,7 +172,7 @@
   - reviewId
 
 #### DELETE : /review/{reviewId}
-![img_11.png](img_11.png)
+![img_11](https://github.com/IM-GYURI/reservation/assets/80020777/3de90be7-af69-40e0-88c0-10fc67a3dcb6)
 - 리뷰 삭제 api
 - Request
   - Header : Authorization (MANAGER/CUSTOMER)
@@ -181,4 +181,4 @@
   - reviewId
 
 ### Schemas
-![img_12.png](img_12.png)
+![img_12](https://github.com/IM-GYURI/reservation/assets/80020777/2c746dcf-0ac2-4e29-b0a3-95c7feea9e1b)
