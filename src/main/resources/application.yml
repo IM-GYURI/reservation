@@ -16,3 +16,7 @@ spring:
 
   jwt:
     secret: Z3l1cmktcmVzZXJ2YXRpb24tcHJvamVjdC1zZWNyZXQta2V5
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher

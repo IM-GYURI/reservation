@@ -38,6 +38,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests((request) -> request.requestMatchers(
                                         new AntPathRequestMatcher("/"),
                                         new AntPathRequestMatcher("/error"),
+                                        new AntPathRequestMatcher("/swagger-ui"),
+                                        new AntPathRequestMatcher("/swagger-ui/**"),
+                                        new AntPathRequestMatcher("/swagger-resources/**"),
+                                        new AntPathRequestMatcher("/v3/api-docs/**"),
                                         new AntPathRequestMatcher("/auth/**"),
                                         new AntPathRequestMatcher("/reservation/visit"),
                                         new AntPathRequestMatcher("/member/**")
