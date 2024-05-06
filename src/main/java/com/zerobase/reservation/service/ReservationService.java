@@ -8,13 +8,10 @@ import com.zerobase.reservation.entity.MemberEntity;
 import com.zerobase.reservation.entity.ReservationEntity;
 import com.zerobase.reservation.entity.StoreEntity;
 import com.zerobase.reservation.exception.CustomException;
-import com.zerobase.reservation.exception.ErrorCode;
 import com.zerobase.reservation.repository.ReservationRepository;
 import com.zerobase.reservation.repository.StoreRepository;
 import com.zerobase.reservation.util.KeyGenerator;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -68,6 +65,27 @@ public class ReservationService {
                         .memberPhone(reservationEntity.getMemberEntity().getPhone())
                         .build())
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * 예약 취소
+     */
+    @Transactional
+    public String delete(String reservationKey) {
+        validateReservationExists(reservationKey);
+
+        reservationRepository.deleteByReservationKey(reservationKey);
+
+        return reservationKey;
+    }
+
+    /**
+     * 예약 키를 통해 예약 검증
+     */
+    private void validateReservationExists(String reserationKey) {
+        if (!reservationRepository.existsByReservationKey(reserationKey)) {
+            throw new CustomException(RESERVATION_NOT_FOUND);
+        }
     }
 
     /**
