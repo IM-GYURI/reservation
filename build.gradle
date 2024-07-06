@@ -11,6 +11,8 @@ java {
 	sourceCompatibility = '17'
 }
 
+apply plugin: 'war'
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor

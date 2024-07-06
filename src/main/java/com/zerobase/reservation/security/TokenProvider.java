@@ -94,8 +94,8 @@ public class TokenProvider {
      */
     private Claims parseClaims(String token) {
         try {
-            return Jwts.parser().setSigningKey(this.secretKey)
-                    .parseClaimsJws(token).getBody();
+            return Jwts.parserBuilder().setSigningKey(this.secretKey)
+                .build().parseClaimsJws(token).getBody();
         } catch (ExpiredJwtException e) {
             return e.getClaims();
         }
